@@ -178,7 +178,7 @@ function Payment({mode,onPaid,onBack}){
         <div style={{fontSize:36,fontWeight:700,color:C.navy,margin:"8px 0 4px"}}>£500</div>
         <p style={{color:C.textLight,fontSize:14,margin:"0 0 20px"}}>One complete AI-drafted {mode==="adjudicator"?"draft decision":"submission"}</p>
         <div style={{textAlign:"left",margin:"0 0 20px"}}>
-          {["AI-drafted submission using Claude","Case law analysis and citations","Professional formatting","Option to forward to a solicitor","Includes full document structure"].map((t,i)=>(
+          {["AI-drafted submission","Case law analysis and citations","Professional formatting","Option to forward to a solicitor","Includes full document structure"].map((t,i)=>(
             <div key={i} style={{display:"flex",alignItems:"baseline",gap:8,marginBottom:6}}>
               <span style={{color:C.green,fontSize:12,flexShrink:0}}>&#10003;</span>
               <span style={{color:C.text,fontSize:13}}>{t}</span>
