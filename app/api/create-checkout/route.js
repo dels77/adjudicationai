@@ -1,10 +1,13 @@
 import Stripe from "stripe";
 import { NextResponse } from "next/server";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-
 export async function POST(req) {
   try {
+    if (!process.env.STRIPE_SECRET_KEY) {
+      return NextResponse.json({ error: "Stripe is not configured yet. Please add your Stripe API keys." }, { status: 500 });
+    }
+
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
     const { submissionType, mode } = await req.json();
 
     const session = await stripe.checkout.sessions.create({
@@ -17,7 +20,7 @@ export async function POST(req) {
               name: "Adjudication Submission Draft",
               description: `AI-drafted ${submissionType || "adjudication submission"} — ${mode === "adjudicator" ? "Adjudicator Mode" : "Party Mode"}`,
             },
-            unit_amount: 50000, // £500.00 in pence
+            unit_amount: 50000,
           },
           quantity: 1,
         },
