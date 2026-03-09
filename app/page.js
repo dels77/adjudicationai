@@ -70,7 +70,7 @@ function Landing({onStart}){
       <div style={{display:"flex",gap:12,justifyContent:"center",marginTop:32}}>
         <button style={{...S.btn,padding:"14px 32px"}} onClick={onStart}>Start a submission</button>
       </div>
-      <p style={{color:C.textVLight,fontSize:12,marginTop:12}}>£500 per submission. Based on HGCRA 1996 s.108.</p>
+      <p style={{color:C.textVLight,fontSize:12,marginTop:12}}>£500 per submission.</p>
     </div>
 
     <Rule />
@@ -126,7 +126,7 @@ function Landing({onStart}){
         <Logo size={14} />
         <span style={{color:C.textVLight,fontSize:11}}>© {new Date().getFullYear()}</span>
       </div>
-      <p style={{color:C.textVLight,fontSize:10,maxWidth:420,textAlign:"right",margin:0}}>This tool generates draft submissions only and does not constitute legal advice. Based on the Housing Grants, Construction and Regeneration Act 1996.</p>
+      <p style={{color:C.textVLight,fontSize:10,maxWidth:420,textAlign:"right",margin:0}}>This tool generates draft submissions only and does not constitute legal advice.</p>
     </footer>
   </div>;
 }
